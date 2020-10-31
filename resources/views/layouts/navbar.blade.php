@@ -20,8 +20,8 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Iniciar Sesión</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Registrarse</a></li>
+                    <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar Sesión</a></li>
+                    <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Registrarse</a></li>
                 </ul>
             </div>
         </div>
