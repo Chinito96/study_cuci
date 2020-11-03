@@ -1,7 +1,10 @@
-.pb-6, .py-6 {
+.pb-6,
+.py-6 {
     padding-bottom: 6rem!important;
 }
-.pt-6, .py-6 {
+
+.pt-6,
+.py-6 {
     padding-top: 6rem!important;
 }
 
@@ -29,22 +32,36 @@
     padding-top: 8rem;
 }
 
-.label-heading, .subtitle {
+.label-heading,
+.subtitle {
     text-transform: uppercase;
     color: #868e96;
 }
+
 .subtitle {
     margin-bottom: 0;
     letter-spacing: .2em;
     font-weight: 700;
 }
+
 .text-secondary {
     color: #e83e8c!important;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: .5rem;
-    font-family: Poppins,sans-serif;
+    font-family: Poppins, sans-serif;
     font-weight: 700;
     line-height: 1.3;
 }
