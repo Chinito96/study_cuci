@@ -17,7 +17,6 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Habitaciones</a>
                             <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Restaurantes</a>
-                            <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Antros</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
