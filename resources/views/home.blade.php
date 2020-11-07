@@ -10,12 +10,16 @@
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
-                        </div>
+                <div class="jumbotron">
                     @endif
-
-                    {{ Auth::user()->name }} Bienvenido Aqui encontraras lo que necesitas!
-                </div>
-               
+                    <h1 class="display-4"> {{ Auth::user()->name }} Bienvenido Aqui encontraras lo que necesitas!</h1>
+                    <p class="lead">Aqui encontraras ayuda para encontrar desde Casas, Habitaciones o lugares donde comer.</p>
+                    <hr class="my-4">
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Habitaciones</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Restaurantes</button>
+                    
+                    </p>
+                  </div>
             </div>
         </div>
     </div>
