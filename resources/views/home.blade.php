@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Study Cuci') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -12,7 +12,7 @@
                             {{ session('status') }}
                 <div class="jumbotron">
                     @endif
-                    <h1 class="display-2"> {{ Auth::user()->name }} Bienvenido Aqui encontraras lo que necesitas!</h1>
+                    <h1 class="display-7"> {{ Auth::user()->name }} Bienvenido Sabemos lo que necesitas!</h1>
                     <p class="lead">Aqui encontraras ayuda para encontrar desde Casas, Habitaciones o lugares donde comer.</p>
                     <hr class="my-4">
                     <button type="button" class="btn btn-primary btn-lg btn-block">Habitaciones</button>
