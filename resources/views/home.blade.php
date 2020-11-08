@@ -15,8 +15,8 @@
                     <h1 class="display-7"> {{ Auth::user()->name }} Bienvenido Sabemos lo que necesitas!</h1>
                     <p class="lead">Aqui encontraras ayuda para encontrar desde Casas, Habitaciones o lugares donde comer.</p>
                     <hr class="my-4">
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Habitaciones</button>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Restaurantes</button>
+                    <a href="{{url('habitaciones')}}" class="btn btn-primary btn-lg btn-block">Habitaciones</a>
+                    <a href="" class="btn btn-primary btn-lg btn-block">Restaurantes</a>
                     
                     </p>
                   </div>
