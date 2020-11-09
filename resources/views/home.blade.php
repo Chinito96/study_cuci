@@ -17,6 +17,7 @@
                     <hr class="my-4">
                     <a href="{{url('habitaciones')}}" class="btn btn-primary btn-lg btn-block">Habitaciones</a>
                     <a href="" class="btn btn-primary btn-lg btn-block">Restaurantes</a>
+                    <a href="" class="btn btn-primary btn-lg btn-block">Transporte</a>
                     
                     </p>
                   </div>
