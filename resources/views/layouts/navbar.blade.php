@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center">
                 <a class="py-1 navbar-brand" href="/">
                     <img src="{{asset('svg/escudo_udg.svg')}}" width="35px" height="50px" alt="CUCI logo">
-                    STUDY CUCI
+                    <h1>STUDY CUCI<span class="badge badge-secondary"></span></h1>
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,7 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
                     @if (Auth::user())
                     <li class="nav-item"><a href="{{Auth::logout()}}" class="nav-link">Cerrar Sesion</a></li>
                     @else
