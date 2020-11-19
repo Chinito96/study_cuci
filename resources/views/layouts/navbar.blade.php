@@ -21,11 +21,11 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
+                    <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
                     <li class="nav-item"><a href="{{Auth::logout()}}" class="nav-link">Cerrar Sesion</a></li>
                     @else
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
+                    <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
                     <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar Sesión</a></li>
                     <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Registrarse</a></li>
                     @endauth
