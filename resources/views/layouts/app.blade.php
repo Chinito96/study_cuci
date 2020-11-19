@@ -6,7 +6,7 @@
 <body>
     <div id="app">
         @include('layouts.navbar')
-        <main class="content-margin">
+        <main class="content-margin mb-5 pb-5">
             @yield('content')
         </main>
         @include('layouts.footer')

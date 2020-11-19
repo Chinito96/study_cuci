@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center">
                 <a class="py-1 navbar-brand" href="/">
                     <img src="{{asset('svg/escudo_udg.svg')}}" width="35px" height="50px" alt="CUCI logo">
-                    <h1>STUDY CUCI<span class="badge badge-secondary"></span></h1>
+                    STUDY CUCI
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="ml-auto navbar-nav">
+                    @auth
                     <li class="dropdown nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -21,12 +22,13 @@
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
-                    @if (Auth::user())
                     <li class="nav-item"><a href="{{Auth::logout()}}" class="nav-link">Cerrar Sesion</a></li>
                     @else
+                    <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sobre nosotros</a></li>
                     <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar Sesión</a></li>
                     <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Registrarse</a></li>
-                    @endif
+                    @endauth
                 </ul>
             </div>
         </div>
