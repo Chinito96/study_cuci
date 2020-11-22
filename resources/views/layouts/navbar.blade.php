@@ -16,13 +16,13 @@
                     <li class="dropdown nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Habitaciones</a>
+                            <a href="{{url('habitaciones')}}" tabindex="0" role="menuitem" class="dropdown-item">Habitaciones</a>
                             <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Restaurantes</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
-                    <li class="nav-item"><a href="{{Auth::logout()}}" class="nav-link">Cerrar Sesion</a></li>
+                    <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Cerrar Sesion</a></li>
                     @else
                     <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
