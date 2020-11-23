@@ -8,17 +8,17 @@
         </div>
         <div class="row">
             <div class="mb-3 mb-lg-0 text-center col-lg-4">
-                <div class="icon-rounded bg-primary-light mb-3"></div>
+                <div class="icon-rounded bg-primary-light mb-3"><i class="fas fa-home"></i></div>
                 <h3 class="h5">Encuentra tu hogar ideal</h3>
                 <p class="text-muted">Si eres foráneo, encuentra una casa o habitación a tus necesidades y presupuesto</p>
             </div>
             <div class="mb-3 mb-lg-0 text-center col-lg-4">
-                <div class="icon-rounded bg-primary-light mb-3"></div>
+                <div class="icon-rounded bg-primary-light mb-3"><i class="fas fa-store"></i></div>
                 <h3 class="h5">Apoya el comercio local</h3>
                 <p class="text-muted">Los mejores lugares para comer a los al rededores del campus</p>
             </div>
             <div class="mb-3 mb-lg-0 text-center col-lg-4">
-                <div class="icon-rounded bg-primary-light mb-3"></div>
+                <div class="icon-rounded bg-primary-light mb-3"><i class="fas fa-campground"></i></div>
                 <h3 class="h5">Actividades únicas</h3>
                 <p class="text-muted">Explora las diversas actividades que puedes realizar cerca de tu universidad</p>
             </div>

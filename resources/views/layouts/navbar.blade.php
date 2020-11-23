@@ -3,8 +3,7 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <a class="py-1 navbar-brand" href="/">
-                    <img src="{{asset('svg/escudo_udg.svg')}}" width="35px" height="50px" alt="CUCI logo">
-                    STUDY CUCI
+                    <img src="{{asset('img/logo.png')}}" width="60px" height="50px" alt="CUCI logo">
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,11 +19,14 @@
                             <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Restaurantes</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
+                    @if (Auth::user()->role == "Admin")
+                    <li class="nav-item"><a href="{{ url('appointments') }}" class="nav-link">Dashboard</a></li>  
+                    @endif
                     <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Cerrar Sesion</a></li>
                     @else
-                    <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
                     <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Iniciar Sesión</a></li>
                     <li class="nav-item"><a href="{{route('register')}}" class="nav-link">Registrarse</a></li>

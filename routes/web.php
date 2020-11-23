@@ -9,6 +9,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('habitaciones', App\Http\Controllers\HabitacionesController::class);
+Route::resource('appointments', App\Http\Controllers\AppointmentsController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -19,3 +20,5 @@ Route::get('/about', function(){
 Route::get('/contact', function(){
     return view('contact');
 })->name('contact');
+
+Route::post('contact-us', [App\Http\Controllers\ContactController::class, 'saveContact']);

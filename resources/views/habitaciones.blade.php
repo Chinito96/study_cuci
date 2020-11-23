@@ -1,6 +1,21 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
+    @if (session()->get('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session()->get('success') }}
+    </div>
+    @endif
+    @if (session()->get('error'))
+    <div class="alert alert-danger" role="alert">
+        {{ session()->get('error') }}
+    </div>
+    @endif
     <div class="row">
     @php
         $room = 0;
@@ -15,7 +30,7 @@
           <p class="card-text">{{$habitacion->descripcion}}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <button data-room="{{$habitacion->id}}" class="appointment btn btn-sm btn-outline-success">Quiero una cita</button>
+              <button data-room="{{$habitacion->id}}" data-address="{{$habitacion->domicilio}}" class="appointment btn btn-sm btn-outline-success">Quiero una cita</button>
             </div>
             <span @if ($habitacion->genero == "Femenino")
             class="badge badge-danger text-center"
@@ -90,18 +105,10 @@ $(document).ready(function(){
 
   $('.appointment').click(function() {
     let id = $(this).data("room");
-    let url = 'habitaciones/'+id;
-    $.get(url, function (data) {
-        $('#room-form').attr('action', url);
-        $('.nameNg').val(data.name);
-        $('.email').val(data.email);
-        $('.idNgssol').val(data.idNgssol);
-        $('.department').val(data.department);
-        $('.role').val(data.role);
-        $('.bday').val(data.birthday);
-        $('.anniversary').val(data.anniversary);
-        $('#room-event').modal('show');
-    })
+    let address = $(this).data("address");
+    $('#room_id').val(id);
+    $('#room_address').text(address);
+    $('#room-event').modal('show');
   });
 
 })

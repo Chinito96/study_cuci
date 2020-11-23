@@ -7,43 +7,35 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" class="form" id="room-form">
+            <form method="POST" action="{{ url('appointments') }}" class="form" id="room-form">
                 <div class="modal-body">
+                    <div class="form-group row my-3">            
+                        <h3 class="col-md-3 col-form-label text-md-right">Dirección</h3>
+                        <div class="col-md-8">
+                            <h4 id="room_address" class="btn btn-link"></h4>
+                        </div>
+                    </div>
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <input id="room_id" type="hidden" name="room_id" value="">
                     <div class="form-group row my-3">
                         @csrf             
-                        <label for="email" class="col-md-3 col-form-label text-md-right"><span
-                                class="float-left">{{ __('Email') }}</span></label>
+                        <label for="phone" class="col-md-3 col-form-label text-md-right"><span
+                                class="float-left">{{ __('Contacto') }}</span></label>
                         <div class="col-md-8">
-                            <input type="email" class="email form-control" name="email" value="" required placeholder="Email">
+                            <input type="tel" class="phone form-control" id="phone" name="phone" value="{{Auth::user()->phone}}" placeholder="00-0000-0000" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" required>
                         </div>
                     </div>
                     <div class="form-group row my-3">         
-                        <label for="idNgssol" class="col-md-3 col-form-label text-md-right"><span
-                                class="float-left">{{ __('Name') }}</span></label>
+                        <label for="comment" class="col-md-3 col-form-label text-md-right"><span
+                                class="float-left">{{ __('Comentarios') }}</span></label>
                         <div class="col-md-8">
-                            <input type="text" class="nameNg form-control" name="name" required value="" placeholder="Employee's Name">
+                            <textarea rows="3" class="comment form-control" name="comment"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row my-3">         
-                        <label for="idNgssol" class="col-md-3 col-form-label text-md-right"><span
-                                class="float-left">{{ __('Employee ID') }}</span></label>
-                        <div class="col-md-8">
-                            <input type="number" class="idNgssol form-control" name="idNgssol" value="" placeholder="Employee ID">
-                        </div>
-                    </div>
-                    <div class="form-group row my-2">
-                        <label for="bday" class="col-md-3 col-form-label-text-md-right"><span
-                                class="float-left">{{ __('Birthday') }}</span></label>
-                        <div class="col-md-8">
-                            <input type="date" class="form-control bday" name="bday">
-                        </div>
-                    </div>
-                    <div class="form-group row my-2">
-                        <label for="anniversary" class="col-md-3 col-form-label-text-md-right"><span
-                                class="float-left">{{ __('Anniversary') }}</span></label>
-                        <div class="col-md-8">
-                            <input type="date" class="form-control anniversary" name="anniversary">
-                        </div>
+                    <div class="row my-3">
+                        <small class="col-12 col-form-label text-muted">Al hacer click en solicitar recibiremos tu solicitud para una cita, nosotros nos contactaremos con el casero y agendaremos una visita para ti, 
+                            cuando tengamos respuesta te lo notificaremos por correo o al número de contacto indicado. Te pedimos seas paciente.
+                        </small>
                     </div>
                 </div>
                 <div class="modal-footer">

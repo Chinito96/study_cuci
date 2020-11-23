@@ -12,7 +12,7 @@
                             {{ session('status') }}
                 <div class="jumbotron">
                     @endif
-                    <h1 class="display-7"> {{ Auth::user()->name }} Bienvenida Sabemos lo que necesitas!</h1>
+                    <h1 class="display-7"> {{ Auth::user()->name }}. Hola! sabemos lo que necesitas!</h1>
                     <p class="lead">Aqui encontraras ayuda para encontrar desde Casas, Habitaciones o lugares donde comer.</p>
                     <hr class="my-4">
                     <a href="{{url('habitaciones')}}" class="btn btn-primary btn-lg btn-block">Habitaciones</a>
