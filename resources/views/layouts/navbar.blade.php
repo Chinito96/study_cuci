@@ -24,7 +24,12 @@
                     @if (Auth::user()->role == "Admin")
                     <li class="nav-item"><a href="{{ url('appointments') }}" class="nav-link">Dashboard</a></li>  
                     @endif
-                    <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Cerrar Sesion</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                     @else
                     <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="{{route('about')}}" class="nav-link">Sobre nosotros</a></li>
