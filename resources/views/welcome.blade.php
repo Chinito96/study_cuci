@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="hero-home" style="background-image: url('{{ asset('img/bg/img_bg001.jpg') }}');">
+<section class="hero-home" style="background-image: url('{{ asset('img/bg/cuci11.jpg') }}');">
     <div class="py-6 py-md-7 text-white z-index-20 container">
         <div class="row">
             <div class="col-xl-10">
