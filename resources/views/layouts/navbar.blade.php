@@ -16,7 +16,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a href="{{url('habitaciones')}}" tabindex="0" role="menuitem" class="dropdown-item">Habitaciones</a>
-                            <a href="/" tabindex="0" role="menuitem" class="dropdown-item">Restaurantes</a>
+                            <a href="{{url('restaurantes')}}" tabindex="0" role="menuitem" class="dropdown-item">Restaurantes</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contacto</a></li>

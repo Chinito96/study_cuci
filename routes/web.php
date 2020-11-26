@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Restaurantes;
 
 Route::get('/', function () {
-    return view('welcome');
+    $restaurantes = Restaurantes::all();
+    return view('welcome', compact('restaurantes'));
 });
 
 Auth::routes();
 
 Route::resource('habitaciones', App\Http\Controllers\HabitacionesController::class);
+Route::resource('restaurantes', App\Http\Controllers\RestaurantesController::class);
 Route::resource('appointments', App\Http\Controllers\AppointmentsController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

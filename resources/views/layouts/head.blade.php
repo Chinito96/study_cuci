@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/r-2.2.6/sc-2.0.3/sl-1.3.1/datatables.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/b-1.6.5/r-2.2.6/sc-2.0.3/sl-1.3.1/datatables.min.css"/>
 <link href="{{ asset('css/studycuci.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('css/8433753da0b484c5fdff.css')}}">    
+<link rel="stylesheet" href="{{asset('css/cuci-style.css')}}">    
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

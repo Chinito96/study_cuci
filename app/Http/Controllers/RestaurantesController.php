@@ -14,7 +14,10 @@ class RestaurantesController extends Controller
      */
     public function index()
     {
-        //
+        $place = Restaurantes::find(1);
+        $restaurantes = Restaurantes::whereNotIn('id',[1])->get();
+
+        return view('restaurantes', compact('place','restaurantes'));
     }
 
     /**
@@ -44,9 +47,12 @@ class RestaurantesController extends Controller
      * @param  \App\Models\Restaurantes  $restaurantes
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurantes $restaurantes)
+    public function show($id)
     {
-        //
+        $place = Restaurantes::find($id);
+        $restaurantes = Restaurantes::whereNotIn('id',[$id])->get();
+
+        return view('restaurantes', compact('place', 'restaurantes'));
     }
 
     /**

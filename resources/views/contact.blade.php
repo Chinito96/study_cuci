@@ -25,10 +25,10 @@
         <form method="POST" action="{{url('contact-us')}}" class="contact1-form validate-form">
             @csrf
             <span class="contact1-form-title">
-                Queremos escucharte
+                Tienes problemas con la página? Queremos escucharte
             </span>
             <div class="wrap-input1 validate-input" data-validate="Name is required">
-                <input class="input1 form-control" type="text" name="name" placeholder="Nombre">
+                <input class="input1 form-control" type="text" name="name" placeholder="Tu Nombre">
                 @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                 <span class="shadow-input1"></span>
             </div>
             <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                <input class="input1 form-control" type="text" name="email" placeholder="Correo">
+                <input class="input1 form-control" type="text" name="email" placeholder="Ingresa tu Correo">
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -46,7 +46,13 @@
                 <span class="shadow-input1"></span>
             </div>
             <div class="wrap-input1 validate-input" data-validate="Subject is required">
-                <input class="input1 form-control" type="text" name="subject" placeholder="Asunto">
+                {{-- <input class="input1 form-control" type="text" name="subject" placeholder="Asunto"> --}}
+                <select name="subject" class="input1 form-control" id="subject">
+                    <option value="Problemas con mi cuenta">Problemas con mi cuenta</option>
+                    <option value="Problemas con la página">Problemas con la página</option>
+                    <option value="Problemas de diseño">Problemas de diseño</option>
+                    <option value="Sugerencia" selected>Sugerencia</option>
+                </select>
                 @error('subject')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -55,7 +61,7 @@
                 <span class="shadow-input1"></span>
             </div>
             <div class="wrap-input1 validate-input" data-validate="Message is required">
-                <textarea class="input1 form-control" rows="4" cols="4" name="message" placeholder="Mensaje"></textarea>
+                <textarea class="input1 form-control" rows="4" cols="4" name="message" placeholder="Deja tu mensaje"></textarea>
                 @error('message')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

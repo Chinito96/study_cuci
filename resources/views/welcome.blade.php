@@ -46,34 +46,27 @@
         </div>
         <div class="swiper-container guides-slider mx-n2 pt-3 pb-5">
             <div class="swiper-wrapper">
-
+                @foreach ($restaurantes as $place) 
                 <div class="swiper-slide">
                     <div class="card-poster gradient-overlay hover-animate mb-4 mb-lg-0 card">
-                        <a href="{{url('restaurantes/1')}}" class="tile-link"></a>
-                        <img src="{{asset('img/bg/img_card001.jpg')}}" alt="Card image" class="bg-image">
+                        <a href="{{url('restaurantes/'.$place->id)}}" class="tile-link"></a>
+                        <img src="{{asset('img/food/'.$place->imagen)}}" alt="Card image" class="bg-image">
                         <div class="card-body overlay-content">
-                            <h6 class="card-title text-shadow text-uppercase">Paris</h6>
-                            <p class="card-text text-sm">The Eifel Tower</p>
+                            <h6 class="card-title text-shadow text-uppercase">{{$place->lugar}}</h6>
+                            <p class="card-text text-sm">{{$place->horario}}</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="swiper-slide">
-                    <div class="card-poster gradient-overlay hover-animate mb-4 mb-lg-0 card">
-                        <a href="{{url('restaurantes/1')}}" class="tile-link"></a>
-                        <img src="{{asset('img/bg/img_card001.jpg')}}" alt="Card image" class="bg-image">
-                        <div class="card-body overlay-content">
-                            <h6 class="card-title text-shadow text-uppercase">Paris</h6>
-                            <p class="card-text text-sm">The Eifel Tower</p>
-                        </div>
-                    </div>
-                </div>
-                
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </div>
 </section>
+<a href="https://api.whatsapp.com/send?phone=523330728994&text=Hola!%20Me%20gustar%C3%ADa%20mas%20informaci%C3%B3n" 
+    class="float text-decoration-none" style="color: #fff" target="_blank">
+    <i class="fab fa-whatsapp my-float"></i>
+    </a>
 @endsection
 @section('footer-scripts')
 <script>
@@ -81,7 +74,7 @@
     $('#main-frame').addClass('content-margin-header');
     $('.hero-home').addClass('content-margin-header mb-5 pb-5');
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 5,
+        slidesPerView: 4,
         spaceBetween: 20,
         pagination: {
             el: '.swipper-pagination',

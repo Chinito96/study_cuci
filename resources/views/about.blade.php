@@ -20,7 +20,7 @@
 <section class="divider-full-width my-5"></section>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="user col-6">
+        <div class="user col-4">
             <div class="user_image">
                 <img src="{{asset('/img/profiles/chave.jpeg')}}" alt="" title="" media-simple="true">
             </div>
@@ -30,15 +30,32 @@
                 </p>
             </div>
             <div class="user_name font-weight-bold pb-2 mbr-fonts-style display-7 text-center">
-                Frida
+                Frida Ocampo
             </div>
             <div class="user_desk font-weight-light mbr-fonts-style display-7 text-center">
                 PROGRAMADOR
             </div>
         </div>
-        <div class="user col-6">
+        <div class="user col-4">
             <div class="user_image">
                 <img src="{{asset('/img/profiles/david.jpeg')}}" alt="" title="" media-simple="true">
+            </div>
+            <div class="user_text pb-3">
+                <p class="mbr-fonts-style display-7 text-center">
+                    Estudiante de Ingeniería en Computación. Encargado de realizar las pruebas y test 
+                    de la plataforma.
+                </p>
+            </div>
+            <div class="user_name font-weight-bold pb-2 mbr-fonts-style display-7 text-center">
+                David Aviña
+            </div>
+            <div class="user_desk font-weight-light mbr-fonts-style display-7 text-center">
+                TESTER
+            </div>
+        </div>
+        <div class="user col-4">
+            <div class="user_image">
+                <img src="{{asset('/img/profiles/more.jpeg')}}" alt="" title="" media-simple="true">
             </div>
             <div class="user_text pb-3">
                 <p class="mbr-fonts-style display-7 text-center">
@@ -46,7 +63,7 @@
                 </p>
             </div>
             <div class="user_name font-weight-bold pb-2 mbr-fonts-style display-7 text-center">
-                David
+                Juan Moreno
             </div>
             <div class="user_desk font-weight-light mbr-fonts-style display-7 text-center">
                 DISEÑADOR

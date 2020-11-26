@@ -2,6 +2,21 @@
 @section('content')
 <section>
     <div class="container">
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
+        @if (session()->get('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session()->get('success') }}
+        </div>
+        @endif
+        @if (session()->get('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session()->get('error') }}
+        </div>
+        @endif
         <div class="row">
 
         </div>
@@ -32,6 +47,7 @@
             </table>
     </div>
 </section>
+@include('modals.room-status')
 @endsection
 @section('footer-scripts')
 <script>
@@ -54,7 +70,13 @@ $(document).ready(function(){
                 className: 'btn btn-success mx-3',
                 action: function(e, dt, node, config) {
                     let id = dt.row({selected: true}).id();
-                    alert(id);
+                    let url = '/appointments/' + id;
+                    $.get(url, function(data) {
+                        $('#app-form').attr('action', url);
+                        $('#status').val(data.status);
+                        $('#comments').val(data.comments);
+                        $('#app-room').modal('show');
+                    });
                 },
                 init: function(api, node, config) {
                     $(node).removeClass('dt-button');

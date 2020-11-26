@@ -71,6 +71,22 @@ class AppointmentsController extends Controller
         // store the appointment
         $appointment->save();
 
+        $room = Habitaciones::find($appointment->room_id)->value('domicilio');
+
+        \Mail::send('emails.appointment',
+             array(
+                 'name' => $user->name,
+                 'email' => $user->email,
+                 'phone' => $user->phone,
+                 'room' => $room
+             ), function($message) use ($user)
+               {
+                  $message->from('studycuci@gmail.com');
+                  $message->subject('Nueva cita creada');
+                  $message->to($user->email);
+               }
+        );
+
         return redirect('habitaciones')->with('success', 'Se ha registrado su cita');
     }
 
@@ -80,9 +96,9 @@ class AppointmentsController extends Controller
      * @param  \App\Models\Appointments  $appointments
      * @return \Illuminate\Http\Response
      */
-    public function show(Appointments $appointments)
+    public function show($id)
     {
-        //
+        return Appointments::find($id);
     }
 
     /**
@@ -103,9 +119,41 @@ class AppointmentsController extends Controller
      * @param  \App\Models\Appointments  $appointments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Appointments $appointments)
+    public function update(Request $request, $id)
     {
-        //
+        $app = Appointments::find($id);
+
+        $user = User::find($app->user_id);
+        $room = Habitaciones::find($app->room_id)->value('domicilio');
+
+        if($app->status != $request->status) {
+            $app->status = $request->status;
+            $app->comments = $request->comment;
+
+            \Mail::send('emails.appointment-update',
+             array(
+                 'name' => $user->name,
+                 'email' => $user->email,
+                 'phone' => $user->phone,
+                 'status' => $app->status,
+                 'room' => $room
+             ), function($message) use ($user)
+               {
+                  $message->from('studycuci@gmail.com');
+                  $message->subject('Actualización de cita');
+                  $message->to($user->email);
+               }
+            );
+
+            $app->save();
+            
+            return redirect('appointments')->with('success', 'Se ha actualizado su cita');
+        } else {
+            $app->comments = $request->comment;
+            $app->save();
+
+            return redirect('appointments')->with('success', 'Se ha actualizado su cita pero sin cambio de estatus');
+        }
     }
 
     /**
